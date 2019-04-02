@@ -1,0 +1,247 @@
+/* Спецификация */
+
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.header{
+  background: #fcdb00;
+  color: #443b01;
+  padding-top: 58px;
+  padding-bottom: 107px;
+}
+
+ul,li{
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5{
+  font-weight: 700;
+  color: #000;
+}
+
+h2{
+  text-align: center;
+}
+
+h3{
+  font-weight: 400;
+}
+
+.menu{
+  margin-top: 10px;
+}
+
+.menu__item{
+  margin: 0 57px;
+}
+
+.menu__item a {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+}
+
+.menu__item a:hover {
+  text-decoration: none;
+}
+
+.offer{
+  margin-top: 139px;
+}
+
+.offer__title{
+  font-size: 32px;
+}
+
+.offer__intro{
+  margin-top: 22px;
+  font-weight: 400;
+  font-size: 20px;
+  color: #313841;
+}
+
+.offer__text{
+  margin-top: 23px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #555555;
+  width: 390px;
+}
+
+.icons{
+  margin-top: 41px;
+}
+
+.icons__item a{
+  font-size: 42px;
+  font-weight: 400;
+  color: #010101;
+}
+
+.icons__item {
+  margin-right: 38px;
+}
+
+.icons__item a:hover{
+  text-decoration: none;
+  color: #d48319;
+}
+
+.ipad{
+  margin-top: 67px;
+  display: block;
+}
+
+/* Второй экран */
+
+.f1{
+  margin-top: 91px;
+}
+
+.features{
+  margin-top: 118px;
+}
+
+.features__intro{
+  font-size: 20px;
+  color: #313841;
+  margin-top: 17px;
+}
+
+.feature1__icon{
+  font-size: 50px;
+  margin-right: 37px;
+  color: #000;
+  padding-top: 5px;
+}
+
+.feature1__text{
+  color: #898989;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 16px;
+}
+
+.feature1{
+  margin-bottom: 87px;
+}
+
+.feature2{
+  margin-bottom: 164px;
+}
+
+/* Третий экран */
+
+.touch{
+  background: #010101;
+}
+
+.row_touch{
+  margin-top: 96px;
+}
+
+.touch__title{
+  color: #fcdb00;
+  margin-top: 96px;
+}
+
+.touch__text{
+  font-size: 20px;
+  color: #898989;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 41px;
+}
+
+.touch__input{
+  background: #ffffff;
+  width: 583px;
+  height: 50px;
+  padding: 18px 0 16px 24px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.touch__button{
+  background: #fcdb00;
+  border-radius: 5px;
+  width: 126px;
+  height: 50px;
+  margin-left: 21px;
+  border: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #010101;
+  font-weight: 700;
+  font-family: 'PT Sans', sans-serif;
+}
+
+/* Footer */
+
+.footer{
+  background: #000;
+  padding: 56px 0 94px
+}
+
+.credits{
+  text-align: center;
+  width: 183px;
+  color: #ffffff;
+  margin: 0 auto;
+}
+
+/* Медия запросы */
+
+@media screen and (max-width: 768px){
+  .logo {
+    display: block;
+    margin: 0 auto 40px;
+  }
+
+  .offer{
+    text-align: center;
+  }
+
+  .offer__text{
+    margin: 30px auto 0;
+    width: auto;
+  }
+
+  .icons{
+    justify-content: center;
+    margin-left: 43px;
+  }
+
+  .touch__form{
+    text-align: center;
+  }
+
+  .touch__button{
+    margin: 30px 0 0 0;
+  }
+
+  .touch__input{
+    width:100%;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .menu{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu__item{
+    margin-top: 10px;
+  }
+
+  .offer{
+    margin-top: 50px;
+  }
+}
