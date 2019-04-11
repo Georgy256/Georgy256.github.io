@@ -446,6 +446,10 @@ body{
   margin-bottom: 30px;
 }
 
+.comment{
+  position: relative;
+}
+
 .comment__title2{
   font-family: "Raleway", sans-serif;
   font-size: 14px;
@@ -533,25 +537,25 @@ body{
 
 .test2{
   position: absolute;
-  width: 513px;
-  right: 500px;
-  top: 3779px;
+  width: 663px;
+  right: 22%;
+  top: -370px;
   display: none;
 }
 
 .test3{
   position: absolute;
-  width: 513px;
-  right: 500px;
-  top: 4090px;
+  width: 663px;
+  right: 22%;
+  top: -60px;
   display: none;
 }
 
 .test4{
   position: absolute;
-  width: 513px;
-  right: 500px;
-  top: 4410px;
+  width: 663px;
+  right: 22%;
+  top: 250px;
   display: none;
 }
 
@@ -575,13 +579,13 @@ body{
 
 .comment__fon4{
   position: absolute;
-  top: 4185px;
-  right: -10px;
+  top: 140px;
+  right: -13px;
 }
 
 .comment__fon3{
   position: absolute;
-  top: 4650px;
+  top: 600px;
   left: -10px;
 }
 
@@ -682,7 +686,7 @@ body{
   }
 
   .privilege__picture1{
-    left: 490px;
+    left: 37%;
   }
 
   .tariff__fon1{
@@ -694,15 +698,15 @@ body{
   }
 
   .test2{
-    right: 230px;
+    right: 15%;
   }
 
   .test3{
-    right: 230px;
+    right: 15%;
   }
 
   .test4{
-    right: 230px;
+    right: 15%;
   }
 
   .comment__fon4{
@@ -716,6 +720,20 @@ body{
   .footer__icon1{
     margin-left: 120px;
   }
+}
+
+@media screen and (max-width: 1400px){
+ .test2{
+   right: 10%;
+ }
+
+ .test3{
+   right: 10%;
+ }
+
+ .test4{
+   right: 10%;
+ }
 }
 
 @media screen and (max-width: 1367px) {
@@ -740,15 +758,15 @@ body{
   }
 
   .test2{
-    right: 13%;
+    right: 6%;
   }
 
   .test3{
-    right: 13%;
+    right: 6%;
   }
 
   .test4{
-    right: 13%;
+    right: 6%;
   }
 
   .footer__icon1{
@@ -901,6 +919,10 @@ body{
     padding-bottom: 20px;
   }
 
+  .footer__block1{
+    margin-left: 0;
+  }
+
   .footer__icon4{
     padding-bottom: 20px;
   }
@@ -927,10 +949,6 @@ body{
 
   .privilege__text1{
     display: none;
-  }
-
-  .tariff__text5{
-    margin-bottom: 15px;
   }
 
   .comment__title1{
@@ -971,5 +989,11 @@ body{
 
   .author__helptext3{
     display: none;
+  }
+}
+
+@media screen and (max-width: 330px){
+  .tariff__text5{
+    margin-bottom: 15px;
   }
 }
