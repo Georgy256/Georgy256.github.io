@@ -191,6 +191,15 @@ body{
   margin-bottom: 20px;
 }
 
+.author__help2text3{
+  font-size: 20px;
+  font-weight: 400;
+  color: #113f67;
+  line-height: 23px;
+  margin-bottom: 20px;
+  display: none;
+}
+
 .author__text6{
   margin: 99px 0 50px;
   font-size: 36px;
@@ -949,6 +958,18 @@ body{
   }
 
   .footer__title1{
-    font-size: 30px; 
+    font-size: 30px;
+  }
+
+  .privilege__title1{
+    font-size: 30px;
+  }
+
+  .author__help2text3{
+    display: block;
+  }
+
+  .author__helptext3{
+    display: none;
   }
 }
