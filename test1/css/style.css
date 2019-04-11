@@ -53,12 +53,11 @@ body{
   border-radius: 80px;
   border-color: white;
   background: #ffffff;
+  outline: none!important;
 }
 
 .header__button1:hover{
-  width: 380px;
-  height: 90px;
-  font-size: 26px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .header__block1, .header__block2, .header__block3{
@@ -177,12 +176,11 @@ body{
   background: #671ae2;
   border-radius: 70px;
   border: 0;
+  outline: none!important;
 }
 
 .author__button:hover{
-  width: 380px;
-  height: 90px;
-  font-size: 26px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .author__title1{
@@ -392,6 +390,11 @@ body{
   width: 172px;
   margin-left: 40px;
   height: 35px;
+  outline: none!important;
+}
+
+.tariff__button1:hover{
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .tariff__font1{
@@ -484,6 +487,11 @@ body{
   border-radius: 25px;
   margin-left: 5px;
   cursor: pointer;
+  outline: none!important;
+}
+
+.comment__button:hover{
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .comment__icon1{
@@ -549,6 +557,11 @@ body{
   background: #8636e4;
   border-radius: 90px;
   line-height: 28px;
+  outline: none!important;
+}
+
+.comment__button2:hover{
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .comment__fon4{
@@ -602,6 +615,7 @@ body{
   font-weight: 400;
   border-radius: 50px;
   padding-left: 30px;
+  outline: none!important;
 }
 
 .footer__button1{
@@ -613,6 +627,11 @@ body{
   background: #7a2ae3;
   border-radius: 50px;
   border: 0;
+  outline: none!important;
+}
+
+.footer__button1:hover{
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .footer__icon i{
@@ -927,5 +946,9 @@ body{
 
   .header__text1{
     font-size: 40px;
+  }
+
+  .footer__title1{
+    font-size: 30px; 
   }
 }
