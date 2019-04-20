@@ -5,7 +5,11 @@ body{
   color: #ffffff;
   background-color: #022c43;
   position: relative;
-  overflow-x: hidden;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 h2{
