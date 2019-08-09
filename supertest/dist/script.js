@@ -106,8 +106,8 @@ class Slider extends React.Component {
       React.createElement("div", { class: "carousel", style: { width: `${this.width}px` } },
       React.createElement("ul", { class: "ul", style: { transform: `translateX(${this.state.position}px)` } }, React.createElement(PartTest, { massiv: this.massiv, setStateByTest: this.setStateByTest, setStateBySlider: this.setStateBySlider })),
 
-      React.createElement(Button, { class: "prev", symbol: "&#60;", prev: this.prev }),
-      React.createElement(Button, { class: "next", symbol: "&#62;", next: this.next }),
+      React.createElement(Button, { class: "prev", symbol: React.createElement("i", { class: "fas fa-arrow-left" }), prev: this.prev }),
+      React.createElement(Button, { class: "next", symbol: React.createElement("i", { class: "fas fa-arrow-right" }), next: this.next }),
       this.state.everythingIsReady ?
       React.createElement("button", { style: { color: "green", marginTop: "10px" }, onClick: e => this.setStateByTest({ button: true }) }, "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0442\u0435\u0441\u0442") : React.createElement("span", null)));
 

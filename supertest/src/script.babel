@@ -106,8 +106,8 @@ class Slider extends React.Component {
       <div class="carousel" style={{width: `${this.width}px`}}>
         <ul class="ul" style={{transform: `translateX(${this.state.position}px)`}}><PartTest massiv={this.massiv} setStateByTest ={this.setStateByTest} setStateBySlider={this.setStateBySlider}/></ul>
         
-        <Button class="prev" symbol="⤆" prev={this.prev}/>
-        <Button class="next" symbol="⤇" next={this.next}/>
+        <Button class="prev" symbol={<i class="fas fa-arrow-left"></i>} prev={this.prev}/>
+        <Button class="next" symbol={<i class="fas fa-arrow-right"></i>} next={this.next}/>
         { (this.state.everythingIsReady) ?
           (<button style={{color: "green", marginTop: "10px"}} onClick={(e)=> this.setStateByTest({button: true})}>Проверить тест</button>) : (<span></span>)
         }
