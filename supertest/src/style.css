@@ -1,0 +1,23 @@
+li{
+  display: inline-block;
+  position: relative;
+  width: 270px;
+}
+
+.carousel{
+  overflow: hidden;
+  position: relative;
+}
+
+.ul {
+  height: 100px;
+  width: 9999px;
+  margin: 0;
+  padding: 0;
+  transition: all 0.7s ease-in-out;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+}

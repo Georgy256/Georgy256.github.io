@@ -1,0 +1,230 @@
+ let massiv = [["Какое число получится, если 5 * 5?", 25, 1], ["Сколько часов в сутках?", 24, 2], ["Сколько будет 30 * 2?", 60, 2], ["Сколько будет 60 * 5?", 300, 3], ["Сколько будет 3*2?", 6, 4], ["Сколько месяцев в году?", 12, 2]];
+let elem = document.querySelector("#test");
+
+class Test extends React.Component {
+  constructor(props) {
+    super(props);
+    this.massiv = props.massiv;
+    this.setState = this.setState.bind(this);
+  }
+  
+  render() {
+    console.log(this.state);
+    return(
+      <div>
+        {(this.state && this.state.button) ? (<ResultTest massiv={this.massiv} answers={this.state}/>) : ( <Slider massiv={this.massiv} setState={this.setState}/>)}
+      </div>
+    ); 
+  }
+}
+
+class ResultTest extends React.Component {
+  constructor(props) {
+    super(props);
+    this.massiv = props.massiv;
+    this.answers = props.answers;
+    this.state = {
+      rightAnswers: 0,
+      total: 0
+    };
+  }
+  
+  scoreСalculation(rightAnswers) {
+   
+    let score;
+    
+    if (rightAnswers < this.state.total*0.4) {
+      score = 2;
+    }
+    
+    if (this.state.total*0.4 < rightAnswers && this.state.total*0.6 > rightAnswers) {
+      score = 3;
+    }
+
+    if (rightAnswers >= this.state.total*0.6 && rightAnswers <= this.state.total*0.8) {
+      score = 4;
+    }
+
+    if (rightAnswers > this.state.total*0.8) {
+      score = 5;
+    }
+    
+    return score;
+  } 
+  
+  render() {
+    let results = [];
+    let self = this;
+    this.massiv.forEach(function(elem, index) {
+        results.push(<p>{elem[0]}<br/>{self.answers[index][0]}</p>);
+      if (self.answers[index][1]) {
+        self.state.rightAnswers = self.state.rightAnswers + elem[2];
+      } 
+      
+      self.state.total = self.state.total + elem[2];
+    });
+    
+    return(
+      <div>
+        {results}
+        <h2>Ваша оценка: {self.scoreСalculation(self.state.rightAnswers)}</h2>
+      </div>
+    );
+  }
+}
+
+class Slider extends React.Component {
+  constructor(props) {
+    super(props);
+    this.massiv = props.massiv;
+    this.setStateByTest = props.setState;
+    this.width = 270;
+    this.prev = this.prev.bind(this);
+    this.next = this.next.bind(this);
+    this.setStateBySlider = this.setState.bind(this);
+    this.state = {
+      position: 0,
+      everythingIsReady: false
+    }
+  }
+  
+  next() {
+    if (this.state.position - this.width >= ((-this.massiv.length * this.width) + this.width)) {
+     this.setState({position: this.state.position - this.width });
+    }
+  }
+  
+  prev() {
+    if (this.state.position + this.width <= 0) {
+      this.setState({position: this.state.position + this.width });
+    }
+  }
+  
+  render() {
+
+    return(
+      <div class="carousel" style={{width: `${this.width}px`}}>
+        <ul class="ul" style={{transform: `translateX(${this.state.position}px)`}}><PartTest massiv={this.massiv} setStateByTest ={this.setStateByTest} setStateBySlider={this.setStateBySlider}/></ul>
+        
+        <Button class="prev" symbol="⤆" prev={this.prev}/>
+        <Button class="next" symbol="⤇" next={this.next}/>
+        { (this.state.everythingIsReady) ?
+          (<button style={{color: "green", marginTop: "10px"}} onClick={(e)=> this.setStateByTest({button: true})}>Проверить тест</button>) : (<span></span>)
+        }
+  
+      </div>
+    );
+  }
+}
+
+class PartTest extends React.Component {
+  constructor(props) {
+    super(props);
+    this.setStateByTest = props.setStateByTest;
+    this.massiv = props.massiv;
+    this.setState = this.setState.bind(this);
+    this.state = {};
+    this.setStateBySlider = props.setStateBySlider;
+    this.test = true;
+    this.changeTest = this.changeTest.bind(this);
+  }
+  
+  changeTest(state) {
+    this.test = state;
+  }
+  
+  isReady() {
+ 
+      for (let i=0; i < this.massiv.length; i++) {
+         if (!(this.test && this.state.hasOwnProperty(`${i}`) && !((this.state[`${i}`]) == undefined))) return;
+      }
+      
+      console.log(2);
+      this.setStateBySlider({everythingIsReady: true});
+      this.setStateByTest(this.state);
+      this.test = false;
+    
+  }
+  
+  render() {
+   
+     this.isReady();
+     let self = this;
+     let asks_answers = [];
+     this.massiv.forEach(function(elem, index) {
+      asks_answers.push(
+        <li><Ask ask={elem[0]}/>
+        <Answer correctAnswer={elem[1]} changeTest={self.changeTest} index={index} setStateBySlider={self.setStateBySlider} setState={self.setState} /></li>
+      );
+    });
+    return(
+      asks_answers 
+    );
+  }
+}
+
+function Ask(props) {
+  return (
+    <p>{props.ask}</p>
+  );
+}
+
+class Answer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.correctAnswer = props.correctAnswer;
+    this.setState2 = props.setState;
+    this.index = props.index;
+    this.changeTest = props.changeTest;
+    this.setStateBySlider = props.setStateBySlider;
+  }
+  
+  checkAnswer(answer) {
+    if (answer == "") {
+      this.setState2({[this.index]: undefined});
+      this.setStateBySlider({everythingIsReady: false});
+      return;
+    }
+ 
+    this.changeTest(true);
+    if (answer == this.correctAnswer) {
+      this.setState2({[this.index]: [<p style={{color: "green"}}>Ваш ответ {answer}, правильно!</p>, true]});
+    } else {
+      this.setState2({[this.index]: [<p style={{color: "red"}}>Ваш ответ {answer}, неправильно!</p>, false]})
+    }
+  }
+  
+  render() {
+    return(
+      <input type="text" onBlur={(e)=> this.checkAnswer(e.target.value)}/>
+    );
+  }
+}
+  
+  
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
+    this.symbol = props.symbol;
+    this.class = props.class;
+    this.prev = props.prev;
+    this.next = props.next;
+  }
+  
+  click(classList) {
+ 
+    if (classList.indexOf("prev") != -1) {
+      this.prev();
+    } else {
+      this.next();
+    }
+  }
+  
+  render() {
+    return(
+      <button class={this.class} onClick={(e) => this.click(e.target.classList.value)}>{this.symbol}</button>
+    );
+  }
+}
+
+ReactDOM.render(<Test massiv={massiv}/>, elem);
