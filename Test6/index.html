@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Test6</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background: #222222">
+<div class="title text-center">Парадокс Монти Холла</div>
+<h4 style="color:white" class="text-center">Представьте, что вы стали участником игры, в которой вам нужно выбрать одну из трёх дверей. За одной из дверей находится 1000000$, за двумя другими дверями — пусто. Вы выбираете одну из дверей, например, номер 1, после этого ведущий, который знает, где находится деньги, а где — пустота, открывает одну из оставшихся дверей, например, номер 3, за которой находится пустота. После этого он спрашивает вас — не желаете ли вы изменить свой выбор и выбрать дверь номер 2? Увеличатся ли ваши шансы выиграть деньги, если вы примете предложение ведущего и измените свой выбор? Узнайте это! Сначала постоянно меняйте свой выбор, и посмотрите сколько будет выйгрышей и пройгрышей, а потом стойте на первоначальном выборе. Для того, чтобы выбрать дверь нажмите на неё.</h4>
+<div class="d-flex justify-content-center">
+ <div class="group__door">
+  <div class="door1" onclick="return play(0)"></div>
+  <div class="door2" onclick="return play(1)"></div>
+  <div class="door3" onclick="return play(2)"></div>
+ </div>
+</div>
+<div class="result">
+
+</div>
+
+
+
+  <script type="text/javascript" src="javascript.js"></script>
+</body>
+</html>
